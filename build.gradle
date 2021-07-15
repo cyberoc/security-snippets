@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+apply plugin : "java"
+
+ext {
+    javaMainClass = "org.ocm.exo.Main"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+group 'org.ocm.exo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'commons-validator', name: 'commons-validator', version:'1.7'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
