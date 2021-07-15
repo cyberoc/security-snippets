@@ -1,6 +1,7 @@
 package org.ocm.exo.utils;
 
 import org.apache.commons.validator.routines.DateValidator;
+import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.commons.validator.routines.IntegerValidator;
 import org.apache.commons.validator.routines.UrlValidator;
 
@@ -45,6 +46,14 @@ public class InputValidation {
             System.out.printf("Value %s IS a valid date - after today%n", ld);
         } else {
             System.out.printf("Value %s IS NOT valid date - before today%n", ld);
+        }
+    }
+
+    public static void validateEmail(String e){
+        if (EmailValidator.getInstance().isValid(e)) {
+            System.out.printf("Value %s IS a valid email%n", e);
+        } else {
+            System.out.printf("Value %s IS NOT valid email%n", e);
         }
     }
 
